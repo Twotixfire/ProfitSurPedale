@@ -11,10 +11,10 @@
     </header>
     <nav>
         <a href="index.html">Accueil</a>
-        <a href="themes.php">Thèmes de recettes</a>
-        <a href="recettes.php">Les recettes de déjeuner</a>
-        <a href="recette.html">Recette</a>
-        
+        <a href="themes.php">Nos services</a>
+        <a href="commenditaire.php">Commenditaires</a>
+        <a href="vueUtilisateur.html">Tableau de bord</a>
+        <a href="connexion.html">Connexion</a>
     </nav>
     <main>
         <?php

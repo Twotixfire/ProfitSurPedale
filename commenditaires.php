@@ -14,15 +14,17 @@
 </head>
 <body>
     <header>
-        <h1>Les recettes de déjeuner</h1>
+        <h1>Services offerts</h1>
     </header>
     <nav>
         <a href="index.html">Accueil</a>
-        <a href="themes.php">Thèmes de recettes</a>
-        <a href="recettes.php">Les recettes de déjeuner</a>
-        <a href="recette.html">Recette</a>
+        <a href="themes.php">Nos services</a>
+        <a href="commenditaire.php">Commenditaires</a>
+        <a href="vueUtilisateur.html">Tableau de bord</a>
+        <a href="connexion.html">Connexion</a>
     </nav>
     <main>
+        <!--
         <h1>Le thème choisi est <?=$listeTheme[$theme]?></h1>
         <?php
             echo "<h1>Le thème choisi est $listeTheme[$theme]</h1>";
@@ -49,7 +51,7 @@
                     Dictumst montes nec magnis gravida enim habitant. Curabitur et curabitur nunc phasellus laoreet ultrices malesuada velit</p>
             </div>
             <img src="https://chefcuisto.com/files/2017/02/muffins-pain-dore.jpg" alt="Muffins au pain doré" class="image-recette">
-        </div>
+        </div> -->
     </main>
     <footer></footer>
 </body>
