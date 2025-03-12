@@ -7,13 +7,13 @@
 </head>
 <body>
     <header>
-        <h1>Thèmes de recette</h1>
+        <h1><img src="images/logo_profitssurpedale.png" alt="" height="69px" width="80px">Profits sur pédales</h1>
     </header>
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="themes.php">Nos services</a>
-        <a href="commenditaire.php">Commenditaires</a>
-        <a href="vueUtilisateur.html">Tableau de bord</a>
+        <a href="index.html" class="separateur">Accueil</a>
+        <a href="services.php" class="separateur">Nos services</a>
+        <a href="commenditaires.php" class="separateur">Commenditaires</a>
+        <a href="vueUtilisateur.html"class="separateur">Tableau de bord</a>
         <a href="connexion.html">Connexion</a>
     </nav>
     <main>
