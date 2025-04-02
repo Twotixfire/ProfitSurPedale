@@ -27,16 +27,30 @@
     </nav>
     <main>
         <?php
-            for ($i=0; $i < sizeof($listeCommenditaires); $i++) { 
-                $logo = "";
-                $logo = "images/$listeCommenditaires[$i].png";
-                echo "<div class=\"fiche\">
-                <div class=\"resume\">
-                    <h2>$listeCommenditaires[$i]</h2>
-                    <p>Revenus au kilomètre : $listesOffresCommenditaires[$i]<br></p>
-                </div>
-                <img src=$logo alt=\"$listeCommenditaires[$i]\" class=\"image-recette\">
-                </div>";
+            $numeroConteneurFlex = 3;
+            $flexItemParConteneur = 2;
+            $compteurCommenditaire = 0;
+
+            for ($i=0;$ $i < $numeroConteneurFlex; $i++) {
+                $compteurFlexItem = 0;
+                echo "<div class=\"ficheCommenditaire\">";
+                
+                for ($i=$compteurCommenditaire; $i < sizeof($listeCommenditaires); $i++) {
+                    if ($compteurFlexItem < $flexItemParConteneur) {
+                        $logo = "";
+                        $logo = "images/$listeCommenditaires[$i].png";
+                        echo "<div class=\"ficheCommenditaire\">
+                        <div class=\"resumeCommenditaire\">
+                            <h2>$listeCommenditaires[$i]</h2>
+                            <p>Revenus au kilomètre : $listesOffresCommenditaires[$i]<br></p>
+                        </div>
+                        <img src=$logo alt=\"$listeCommenditaires[$i]\" class=\"image-recette\">";
+                    }
+                    else{
+                        break;
+                    }
+                }
+                echo "</div>";
             }
         ?>
     </main>

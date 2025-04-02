@@ -21,8 +21,8 @@
 
             for ($i=0; $i < 3; $i++) { 
                 echo "
-                <div class=\"fiche\">
-                    <div class=\"resume\">
+                <div class=\"ficheService\">
+                    <div class=\"resumeService\">
                         <h2>Service #$i</h2>
                         <p></p>
                         <a href=\"recettes.php?$i\">&gt; Consulter</a>

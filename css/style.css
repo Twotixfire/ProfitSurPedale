@@ -50,11 +50,11 @@ nav a {
 
 
 
-.fiche {
+.ficheService {
     background-color: #c9c9c9;
     display: flex;
     align-items: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content:flex-start;
     justify-content: space-between;
@@ -63,13 +63,31 @@ nav a {
     
 }
 
+
+.ficheCommenditaire {
+    background-color: #c9c9c9;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: normal;
+    justify-content: flex-start;
+    border: 2px solid #222;
+}
+
 .image-recette {
-    max-width: 40%;
+    max-width: 20%;
     height: auto;
     margin: 5%;
 }
 
-.resume {
+.resumeService {
+    font-size: 1.1em;
+    width: 40%;
+    margin: 5%;
+}
+
+.resumeCommenditaire {
     font-size: 1.1em;
     width: 40%;
     margin: 5%;
