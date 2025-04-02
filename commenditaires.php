@@ -3,6 +3,14 @@
 
     $listeCommenditaires=array("Decathlon", "RedBull", "Giant", "Specialized", "Monster", "Scott");
     $listesOffresCommenditaires=array("0,71$", "0,53$", "0,57$", "0,36$", "0,51$", "0,47$");
+    $listesOffresSpéciales=array(
+        "Offre spécial du commanditaire : <br><br> 400$ d'achats chez Decathlon",
+        "Offre spécial du commanditaire : <br><br> Vélo personalisé d'une valeur de 3000$, avec logo du commenditaire.",
+        "Offre spécial du commenditaire : <br><br> Crédit de 1000$ sur le site du commenditaire",
+        "Offre spécial du commenditaire : <br><br> Crédit de 5500$ en composantes de vélo",
+        "Offre spécial du commenditaire : <br><br> Boisson énergisante à vie de Monster Energy",
+        "Offre spécial du commenditaire : <br><br> Crédit de 3000$ en composantes de vélo"
+    )
     
 ?>
 
@@ -11,7 +19,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recettes</title>
+    <title>Profits sur pédales</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,24 +39,31 @@
             $flexItemParConteneur = 2;
             $compteurCommenditaire = 0;
 
-            for ($i=0;$ $i < $numeroConteneurFlex; $i++) {
+            for ($j=0 ; $j < 3; $j++) {
                 $compteurFlexItem = 0;
                 echo "<div class=\"ficheCommenditaire\">";
                 
                 for ($i=$compteurCommenditaire; $i < sizeof($listeCommenditaires); $i++) {
                     if ($compteurFlexItem < $flexItemParConteneur) {
+                        $compteurFlexItem ++;
+                        $compteurCommenditaire ++;
                         $logo = "";
                         $logo = "images/$listeCommenditaires[$i].png";
-                        echo "<div class=\"ficheCommenditaire\">
+                        echo "
                         <div class=\"resumeCommenditaire\">
-                            <h2>$listeCommenditaires[$i]</h2>
-                            <p>Revenus au kilomètre : $listesOffresCommenditaires[$i]<br></p>
+                            <img src=$logo alt=\"$listeCommenditaires[$i]\" class=\"image-recette\">
+                            
+                            <p>Revenus au kilomètre : $listesOffresCommenditaires[$i]<br>
+                            <br>
+                            $listesOffresSpéciales[$i]
+                            </p>
+                            <a href=\"\" class=\"boutton\">Adhérer</a>
                         </div>
-                        <img src=$logo alt=\"$listeCommenditaires[$i]\" class=\"image-recette\">";
+                        ";
+                        
                     }
-                    else{
-                        break;
-                    }
+                    else 
+                        break 1;
                 }
                 echo "</div>";
             }
