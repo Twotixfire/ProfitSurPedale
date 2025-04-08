@@ -1,3 +1,13 @@
+<?php
+    $listeServices=array("Comptabilisation de vos trajets", "Calcule des revenus", "Contrats avec les commenditaires");
+    $listeDescriptionService=array(
+        "À chaque fois que aurez effectuez un trajet dans le monde, nous compatabiliserons la distance parcourue.",
+        "Nous calculerons les revenus que vous aurez générer suite à vos trajets, selon vos sponsors.",
+        "Vous n'avez qu'à soumettre une demande de contrat au commenditaire de votre choix et nous nous occupons des démarches logistiques.",
+    )
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +29,19 @@
     <main>
         <?php
 
-            for ($i=0; $i < 3; $i++) { 
+            for ($i=0; $i < sizeof($listeServices); $i++) { 
                 echo "
                 <div class=\"ficheService\">
                     <div class=\"resumeService\">
-                        <h2>Service #$i</h2>
-                        <p></p>
-                        <a href=\"recettes.php?$i\">&gt; Consulter</a>
+                        <h2>$listeServices[$i]</h2>
+                        <p>$listeDescriptionService[$i]</p>
                     </div>
                 </div>";
             }
         ?>
     </main>
-    <footer></footer>
+    <footer>
+        <p>© 2025 Tous droits réservés.</p>
+    </footer>
 </body>
 </html>

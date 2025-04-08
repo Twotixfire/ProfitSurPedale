@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profits sur pédale</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/connexion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 <body>
-    <header>
-        <h1><img src="images/logo_profitssurpedale.png" alt="" height="69px" width="80px">Profits sur pédales</h1>
-    </header>
-    <nav>
-        <a href="index.html" class="separateur">Accueil</a>
-        <a href="services.php" class="separateur">Nos services</a>
-        <a href="commenditaires.php" class="separateur">Commenditaires</a>
-        <a href="vueUtilisateur.html"class="separateur">Tableau de bord</a>
-        <a href="connexion.html">Connexion</a>
-    </nav>
-    <main></main>
-    <footer>
-    </footer>
+    <main>
+        <div class="wrapper">
+            <div class="title"><span>Connexion</span></div>
+            <form action="#">
+              <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Nom d'utilisateur" required />
+              </div>
+              <div class="row">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Mot de passe" required />
+              </div>
+              <!-- <div class="pass"><a href="#">Forgot password?</a></div> -->
+              <div class="row button">
+                <input type="submit" value="Se connecter" />
+              </div>
+              <div class="signup-link"><a href="#"> Créer un compte</a></div>
+            </form>
+          </div>
+    </main>
 </body>
 </html>

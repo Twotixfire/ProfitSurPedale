@@ -51,12 +51,13 @@
                         $logo = "images/$listeCommenditaires[$i].png";
                         echo "
                         <div class=\"resumeCommenditaire\">
-                            <img src=$logo alt=\"$listeCommenditaires[$i]\" class=\"image-recette\">
+                            <img src=$logo alt=\"$listeCommenditaires[$i]\" class=\"image-logo\">
                             
                             <p>Revenus au kilomètre : $listesOffresCommenditaires[$i]<br>
                             <br>
                             $listesOffresSpéciales[$i]
                             </p>
+                            <br>
                             <a href=\"\" class=\"boutton\">Adhérer</a>
                         </div>
                         ";
@@ -69,6 +70,8 @@
             }
         ?>
     </main>
-    <footer></footer>
+    <footer>
+        <p>© 2025 Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
