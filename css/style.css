@@ -114,3 +114,50 @@ nav a {
     border-radius: 10px;
     background-color: #489FB5;
 }
+
+.image-accueil{
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.accueil{
+    text-align: center;
+}
+
+.accueil h2{
+    font-size: 2em;
+}
+
+.accueil p{
+    text-justify: auto;
+    font-size: 2em
+}
+
+.bienvenue{
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.historique{
+    display: block;
+}
+
+.total{
+    display: block;
+    text-align: right;
+    text-justify: auto;
+}
+
+table{
+    display: inline-block;
+    border: black solid 1px;
+}
+
+table td{
+    border: black solid 1px;
+    text-align: center;
+    padding: 1em 1em 1em 1em;
+}

@@ -1,6 +1,4 @@
 <?php
-    $theme= filter_input(INPUT_GET, 'theme');
-
     $listeCommenditaires=array("Decathlon", "RedBull", "Giant", "Specialized", "Monster", "Scott");
     $listesOffresCommenditaires=array("0,71$", "0,53$", "0,57$", "0,36$", "0,51$", "0,47$");
     $listesOffresSpéciales=array(
@@ -30,7 +28,7 @@
         <a href="index.html" class="separateur">Accueil</a>
         <a href="services.php" class="separateur">Nos services</a>
         <a href="commenditaires.php" class="separateur">Commenditaires</a>
-        <a href="vueUtilisateur.html"class="separateur">Tableau de bord</a>
+        <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
         <a href="connexion.html">Connexion</a>
     </nav>
     <main>
