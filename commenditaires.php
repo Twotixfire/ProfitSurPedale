@@ -29,7 +29,7 @@
         <a href="services.php" class="separateur">Nos services</a>
         <a href="commenditaires.php" class="separateur">Commenditaires</a>
         <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
-        <a href="connexion.html">Connexion</a>
+        <a href="connexion.php">Connexion</a>
     </nav>
     <main>
         <?php
@@ -66,6 +66,19 @@
                 }
                 echo "</div>";
             }
+
+            require_once __DIR__.'/bd/bdprofitsurpedale.include.php';
+            $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURLIRE,BDMDP);
+            // $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=127.0.0.1;",".BDUTILISATEURLIRE.",".BDMDP");
+            $requete = $connexion->prepare("SELECT * FROM Commenditaire");
+
+            // La requête contient une variable qui est affecté ici
+            // $requete->bindValue(":id",3, PDO::PARAM_INT);
+
+            $requete->execute();
+            $testCommendiatire = $requete->fetchAll(PDO::FETCH_OBJ);
+            var_dump($testCommendiatire);
+            //echo $testCommendiatire[0]->nom;
         ?>
     </main>
     <footer>

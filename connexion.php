@@ -14,7 +14,7 @@
             <form action="#">
               <div class="row">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Nom d'utilisateur" required />
+                <input type="text" placeholder="Adresse courriel" required />
               </div>
               <div class="row">
                 <i class="fas fa-lock"></i>
@@ -24,7 +24,8 @@
               <div class="row button">
                 <input type="submit" value="Se connecter" />
               </div>
-              <div class="signup-link"><a href="#"> Créer un compte</a></div>
+              <div class="signup-link"><a href="creerCompte.php"> Créer un compte</a></div>
+              <div class="signup-link"><a href="index.html"> Retourner à l'accueil</a></div>
             </form>
           </div>
     </main>

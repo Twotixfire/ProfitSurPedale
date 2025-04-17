@@ -15,7 +15,7 @@
         <a href="services.php" class="separateur">Nos services</a>
         <a href="commenditaires.php" class="separateur">Commenditaires</a>
         <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
-        <a href="connexion.html">Connexion</a>
+        <a href="connexion.php">Connexion</a>
     </nav>
     <main>
         <h1 class="bienvenue">Bienvenue Nom utilisateur</h1>
