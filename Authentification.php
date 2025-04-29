@@ -1,3 +1,31 @@
+<?php
+    require_once __DIR__."/src/controller/SessionAuthentification.php";
+    
+    $session = new SessionAuthentification();
+    session_start();
+    $session->validerSession();
+
+    $destinataire = $_SESSION["courriel"];
+
+    $code = rand(100000,999999);
+
+    session_start();
+    $_SESSION['code'] = $code;
+    echo "<p> $code </p>";
+
+    envoyerMail($destinataire, "Votre code est : ".$code);
+    
+    function envoyerMail($to, $message) {
+        $subject = 'Code de vérification';
+        $headers = 
+        'From: beginh25techinfo@begin.h25.techinfo420.ca' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+        return mail($to, $subject, $message, $headers);    
+    }
+
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +39,13 @@
     <main>
         <div class="wrapper">
             <div class="title"><span>Authentification</span></div>
-            <form action="#">
+            <form action="./src/controller/2fa.php"  method="post">
               <div class="row">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Numéro d'authentification" required />
+                <input type="text" name="code" id="code" placeholder="Numéro d'authentification" required />
               </div>
-              <div class="row">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Mot de passe" required />
-              </div>
-              <!-- <div class="pass"><a href="#">Forgot password?</a></div> -->
               <div class="row button">
-                <input type="submit" value="Se connecter" />
+                <input type="submit" value="Valider" />
               </div>
               <div class="signup-link"><a href="index.html"> Retourner à l'accueil</a></div>
             </form>

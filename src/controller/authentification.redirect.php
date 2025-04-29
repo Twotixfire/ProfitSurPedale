@@ -2,7 +2,7 @@
  /**
   * Dépendances 
   */
-require_once __DIR__."/SessionFinale.controller.php";
+require_once __DIR__."/SessionAuthentification.php";
 require_once __DIR__."/../repository/SelectUtilisateur.classe.php";
 require_once __DIR__.'/../model/Utilisateur.model.php';
 
@@ -20,13 +20,15 @@ if (!empty($_POST['courriel']) and !empty($_POST['mdp']))
 
     if (password_verify($mdp, $user->getMdp()))
     {
-        //OK je peux faire la session
+        // Faire la session
 
-        $session = new SessionFinale();
+        $session = new SessionAuthentification();
         session_start();
         $session->setSession($courriel, $_SERVER['REMOTE_ADDR']);
 
-        header("Location: ../views/pagePrecieuse.php");
+
+        header("Location: ../../Authentification.php");
+
     }else 
     {
         //Mauvais mot de passe, rediriger
@@ -35,8 +37,10 @@ if (!empty($_POST['courriel']) and !empty($_POST['mdp']))
 
 }else 
 {
-    error_log("[".date("d/m/o H:i:s e",time())."] Authentification anormal - mail ou mdp absent: Client ".$_SERVER['REMOTE_ADDR']."\n\r",3, __DIR__."/../../../logs/14avril2025.acces.log");
+    error_log("[".date("d/m/o H:i:s e",time())."] Authentification anormal - mail ou mdp absent: Client ".$_SERVER['REMOTE_ADDR']."\n\r");
     header("Location: ../views/erreur.php");
 }
+
+
 
 

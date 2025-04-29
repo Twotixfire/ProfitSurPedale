@@ -20,9 +20,4 @@ abstract class Select
      * Signature de la fonction de sélection d'un enregistrement.
      */
     abstract function select();
-
-    /**
-     * Signature de la fonction de sélection de plusieurs enregistrements.
-     */
-    abstract function selectMultiple(); 
 }

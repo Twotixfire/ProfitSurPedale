@@ -11,22 +11,23 @@
     <main>
         <div class="wrapper">
             <div class="title"><span>Créer compte</span></div>
-            <form action="#">
+            <form action="./ajouterUtilisateur.php"  method="post">
               <div class="row">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Adresse courriel" required />
+                <input type="text" name="courriel" id="courriel" placeholder="Adresse courriel" required />
               </div>
               <div class="row">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Mot de passe" required />
+                <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" required />
               </div>
-              <!-- <div class="pass"><a href="#">Forgot password?</a></div> -->
+
               <div class="row button">
                 <input type="submit" value="Créer le compte" />
               </div>
               <div class="signup-link"><a href="index.html"> Retourner à l'accueil</a></div>
             </form>
           </div>
+        
     </main>
 </body>
 </html>

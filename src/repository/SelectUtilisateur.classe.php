@@ -24,7 +24,7 @@ class SelectUtilisateur extends Select
     public function select()
     {
         try {
-            $pdoRequete = $this->connexion->prepare("select * from users where courriel=:mail");
+            $pdoRequete = $this->connexion->prepare("SELECT * FROM Utilisateur WHERE emailUtilisateur=:mail");
     
             $pdoRequete->bindParam(":mail",$this->courriel,PDO::PARAM_STR);
         
@@ -32,9 +32,9 @@ class SelectUtilisateur extends Select
     
             $user = $pdoRequete->fetch(PDO::FETCH_OBJ);
 
-            $this->user->setId($user->id);
-            $this->user->setCourriel($user->courriel);
-            $this->user->setMdp($user->mdp);
+            $this->user->setId($user->idUtilisateur);
+            $this->user->setCourriel($user->emailUtilisateur);
+            $this->user->setMdp($user->motDePasse);
 
             return $this->user;
     
@@ -42,17 +42,6 @@ class SelectUtilisateur extends Select
             error_log("Exception pdo: ".$e->getMessage());
         }        
     }
-
-
-
-    /**
-     * Sélection de plusieurs users
-     */
-
-     public function selectMultiple()
-     {
-        null;
-     }
 }
 
 

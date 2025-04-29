@@ -4,14 +4,14 @@ require_once __DIR__."/Session.abstract.php";
 
 
 
-class SessionFinale extends Session
+class SessionAuthentification extends Session
 {
     /**
      * Initialise les paramètres de session.
      */
     public function __construct()
     {        
-        session_name("finale");
+        session_name("Authentification");
         parent::__construct();      
     }
 
@@ -39,13 +39,14 @@ class SessionFinale extends Session
                 if (!isset($_SESSION['courriel']) || !isset($_SESSION['ip']) || !isset($_SESSION['delai']))
                 {
                     $this->supprimer();
-                    error_log("[".date("d/m/o H:i:s e",time())."] Accès directe refusée au requérant ".$_SERVER['REMOTE_ADDR']."\n\r");
+                    error_log("[".date("d/m/o H:i:s e",time())."] Accès directe refusée au requérant ".$_SERVER['REMOTE_ADDR']."\n\r",3, __DIR__."/../../../logs/14avril2025.acces.log");
                     header("Location: ../views/erreur.php");
                     exit();
 
                 } elseif ((time() - $_SESSION['delai']) > 60*2) {
                     $this->supprimer();
-                    error_log("[".date("d/m/o H:i:s e",time())."] Session expirée : Requérant ".$_SERVER['REMOTE_ADDR']."Client authorisé: ".$_SESSION['courriel']."\n\r");
+                    error_log("[".date("d/m/o H:i:s e",time())."] Session expirée : Requérant ".$_SERVER['REMOTE_ADDR']."Client authorisé: ".$_SESSION['courriel']."\n\r" ,3, __DIR__."/../../../logs/14avril2025.acces.log");
+                    header("Location: ../index.php?session=expire");
                     exit();
                     
                 }
