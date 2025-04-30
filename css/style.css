@@ -161,3 +161,8 @@ table td{
     text-align: center;
     padding: 1em 1em 1em 1em;
 }
+
+.indisponible{
+    margin-top: 5%;
+    text-align: center;
+}

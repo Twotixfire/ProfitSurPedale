@@ -13,7 +13,7 @@
     <nav>
         <a href="index.html" class="separateur">Accueil</a>
         <a href="services.php" class="separateur">Nos services</a>
-        <a href="commenditaires.php" class="separateur">Commenditaires</a>
+        <a href="commenditairesAdhere.php" class="separateur">Commenditaires</a>
         <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
         <a href="connexion.php">Connexion</a>
     </nav>
@@ -49,13 +49,8 @@
                 <tr>
                     <td>2007-06-13</td><td>36</td><td>0,56</td><td>20,16$</td>
                 </tr>
-                
             </table>
-            
         </div>
-        
-        
-
     </main>
     <footer>
         <p>© 2025 Tous droits réservés.</p>
