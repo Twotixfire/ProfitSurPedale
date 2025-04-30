@@ -36,8 +36,6 @@ class SessionAuthentification extends Session
         {
             if (session_status() == PHP_SESSION_ACTIVE){
 
-                var_dump($_SESSION);
-
                 if (!isset($_SESSION['courriel']) || !isset($_SESSION['ip']) || !isset($_SESSION['delai']))
                 {
                     $this->supprimer();

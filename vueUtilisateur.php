@@ -1,3 +1,13 @@
+<?php
+require_once __DIR__."/src/controller/SessionFinale.controller.php";
+    
+$session = new SessionFinale();
+session_start();
+$session->validerSession();
+
+$utilisateur = $_SESSION["courriel"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +25,10 @@
         <a href="services.php" class="separateur">Nos services</a>
         <a href="commenditairesAdhere.php" class="separateur">Commenditaires</a>
         <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
-        <a href="connexion.php">Connexion</a>
+        <a href="./src/controller/deconnexion.redirect.php">Déconnexion</a>
     </nav>
     <main>
-        <h1 class="bienvenue">Bienvenue Nom utilisateur</h1>
+        <h1 class="bienvenue">Bienvenue <?= $utilisateur ?></h1>
         <br>
         <div class="historique">
             

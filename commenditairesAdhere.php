@@ -1,4 +1,11 @@
 <?php
+    require_once __DIR__."/src/controller/SessionFinale.controller.php";
+    
+    $session = new SessionFinale();
+    session_start();
+    var_dump($_SESSION);
+    $session->validerSession();
+    
     $listeCommenditaires=array("Decathlon", "RedBull", "Giant", "Specialized", "Monster", "Scott");
     $listesOffresCommenditaires=array("0,71$", "0,53$", "0,57$", "0,36$", "0,51$", "0,47$");
     $listesOffresSpéciales=array(
@@ -29,7 +36,7 @@
         <a href="services.php" class="separateur">Nos services</a>
         <a href="commenditairesAdhere.php" class="separateur">Commenditaires</a>
         <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
-        <a href="connexion.php">Connexion</a>
+        <a href="./src/controller/deconnexion.redirect.php">Déconnexion</a>
     </nav>
     <main>
         <?php
@@ -67,18 +74,14 @@
                 echo "</div>";
             }
 
-            require_once __DIR__.'/bd/bdprofitsurpedale.include.php';
-            $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURLIRE,BDMDP);
-            // $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=127.0.0.1;",".BDUTILISATEURLIRE.",".BDMDP");
-            $requete = $connexion->prepare("SELECT * FROM Commenditaire");
+            // require_once __DIR__.'/bd/bdprofitsurpedale.include.php';
+            // $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURLIRE,BDMDP);
+            // $requete = $connexion->prepare("SELECT * FROM Commenditaire");
 
-            // La requête contient une variable qui est affecté ici
-            // $requete->bindValue(":id",3, PDO::PARAM_INT);
+            // $requete->execute();
+            // $testCommendiatire = $requete->fetchAll(PDO::FETCH_OBJ);
+            // var_dump($testCommendiatire);
 
-            $requete->execute();
-            $testCommendiatire = $requete->fetchAll(PDO::FETCH_OBJ);
-            var_dump($testCommendiatire);
-            //echo $testCommendiatire[0]->nom;
         ?>
     </main>
     <footer>

@@ -39,13 +39,13 @@ class SessionFinale extends Session
                 if (!isset($_SESSION['courriel']) || !isset($_SESSION['ip']) || !isset($_SESSION['delai']))
                 {
                     $this->supprimer();
-                    error_log("[".date("d/m/o H:i:s e",time())."] Accès directe refusée au requérant ".$_SERVER['REMOTE_ADDR']."\n\r");
+                    error_log("[".date("d/m/o H:i:s e",time())."] Accès directe refusée au requérant ".$_SERVER['REMOTE_ADDR']."\n\r", 3, __DIR__."/logs/profitsurpedale.acces.log");
                     header("Location: ../views/erreur.php");
                     exit();
 
-                } elseif ((time() - $_SESSION['delai']) > 60*2) {
+                } elseif ((time() - $_SESSION['delai']) > 450*2) {
                     $this->supprimer();
-                    error_log("[".date("d/m/o H:i:s e",time())."] Session expirée : Requérant ".$_SERVER['REMOTE_ADDR']."Client authorisé: ".$_SESSION['courriel']."\n\r");
+                    error_log("[".date("d/m/o H:i:s e",time())."] Session expirée : Requérant ".$_SERVER['REMOTE_ADDR']."Client authorisé: ".$_SESSION['courriel']."\n\r",3, __DIR__."/logs/profitsurpedale.acces.log");
                     exit();
                     
                 }

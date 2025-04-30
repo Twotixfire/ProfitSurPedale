@@ -3,7 +3,6 @@
     
     $session = new SessionAuthentification();
     session_start();
-    var_dump($_SESSION);
     $session->validerSession();
 
     $destinataire = $_SESSION["courriel"];

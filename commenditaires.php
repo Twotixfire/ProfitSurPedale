@@ -56,7 +56,6 @@
                             $listesOffresSpéciales[$i]
                             </p>
                             <br>
-                            <a href=\"\" class=\"boutton\">Adhérer</a>
                         </div>
                         ";
                         
@@ -67,18 +66,18 @@
                 echo "</div>";
             }
 
-            require_once __DIR__.'/bd/bdprofitsurpedale.include.php';
-            $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURLIRE,BDMDP);
-            // $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=127.0.0.1;",".BDUTILISATEURLIRE.",".BDMDP");
-            $requete = $connexion->prepare("SELECT * FROM Commenditaire");
+            // require_once __DIR__.'/bd/bdprofitsurpedale.include.php';
+            // $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURLIRE,BDMDP);
+            // // $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=127.0.0.1;",".BDUTILISATEURLIRE.",".BDMDP");
+            // $requete = $connexion->prepare("SELECT * FROM Commenditaire");
 
-            // La requête contient une variable qui est affecté ici
-            // $requete->bindValue(":id",3, PDO::PARAM_INT);
+            // // La requête contient une variable qui est affecté ici
+            // // $requete->bindValue(":id",3, PDO::PARAM_INT);
 
-            $requete->execute();
-            $testCommendiatire = $requete->fetchAll(PDO::FETCH_OBJ);
-            var_dump($testCommendiatire);
-            //echo $testCommendiatire[0]->nom;
+            // $requete->execute();
+            // $testCommendiatire = $requete->fetchAll(PDO::FETCH_OBJ);
+            // var_dump($testCommendiatire);
+            // //echo $testCommendiatire[0]->nom;
         ?>
     </main>
     <footer>
