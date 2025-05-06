@@ -3,7 +3,6 @@
     
     $session = new SessionFinale();
     session_start();
-    var_dump($_SESSION);
     $session->validerSession();
     
     $listeCommenditaires=array("Decathlon", "RedBull", "Giant", "Specialized", "Monster", "Scott");
@@ -32,8 +31,8 @@
         <h1><img src="images/logo_profitssurpedale.png" alt="" height="69px" width="80px">Profits sur pédales</h1>
     </header>
     <nav>
-        <a href="index.html" class="separateur">Accueil</a>
-        <a href="services.php" class="separateur">Nos services</a>
+        <a href="accueil.php" class="separateur">Accueil</a>
+        <a href="servicesSession.php" class="separateur">Nos services</a>
         <a href="commenditairesAdhere.php" class="separateur">Commenditaires</a>
         <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
         <a href="./src/controller/deconnexion.redirect.php">Déconnexion</a>

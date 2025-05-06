@@ -1,11 +1,16 @@
 <?php
+    require_once __DIR__."/src/controller/SessionFinale.controller.php";
+    
+    $session = new SessionFinale();
+    session_start();
+    $session->validerSession();
+    
     $listeServices=array("Comptabilisation de vos trajets", "Calcule des revenus", "Contrats avec les commenditaires");
     $listeDescriptionService=array(
         "À chaque fois que aurez effectuez un trajet dans le monde, nous compatabiliserons la distance parcourue.",
         "Nous calculerons les revenus que vous aurez générer suite à vos trajets, selon vos sponsors.",
         "Vous n'avez qu'à soumettre une demande de contrat au commenditaire de votre choix et nous nous occupons des démarches logistiques.",
     )
-    
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +25,11 @@
         <h1><img src="images/logo_profitssurpedale.png" alt="" height="69px" width="80px">Profits sur pédales</h1>
     </header>
     <nav>
-        <a href="index.html" class="separateur">Accueil</a>
-        <a href="services.php" class="separateur">Nos services</a>
-        <a href="commenditaires.php" class="separateur">Commenditaires</a>
-        <a href="contenuIndisponible.php"class="separateur">Tableau de bord</a>
-        <a href="connexion.php">Connexion</a>
+        <a href="accueil.php" class="separateur">Accueil</a>
+        <a href="servicesSession.php" class="separateur">Nos services</a>
+        <a href="commenditairesAdhere.php" class="separateur">Commenditaires</a>
+        <a href="vueUtilisateur.php"class="separateur">Tableau de bord</a>
+        <a href="./src/controller/deconnexion.redirect.php">Déconnexion</a>
     </nav>
     <main>
         <?php
