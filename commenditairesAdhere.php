@@ -51,6 +51,7 @@
                     if ($compteurFlexItem < $flexItemParConteneur) {
                         $compteurFlexItem ++;
                         $compteurCommenditaire ++;
+                        $valeur = $i + 1;
                         $logo = "";
                         $logo = "images/$listeCommenditaires[$i].png";
                         echo "
@@ -62,25 +63,15 @@
                             $listesOffresSpéciales[$i]
                             </p>
                             <br>
-                            <a href=\"\" class=\"boutton\">Adhérer</a>
+                            <a href=\"./bd/transaction.php?commenditaire=$valeur\" class=\"boutton\">Adhérer</a>
                         </div>
                         ";
-                        
                     }
                     else 
                         break 1;
                 }
                 echo "</div>";
             }
-
-            // require_once __DIR__.'/bd/bdprofitsurpedale.include.php';
-            // $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURLIRE,BDMDP);
-            // $requete = $connexion->prepare("SELECT * FROM Commenditaire");
-
-            // $requete->execute();
-            // $testCommendiatire = $requete->fetchAll(PDO::FETCH_OBJ);
-            // var_dump($testCommendiatire);
-
         ?>
     </main>
     <footer>

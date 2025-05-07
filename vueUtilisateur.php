@@ -9,6 +9,10 @@ $utilisateur = $_SESSION["courriel"];
 
 require_once __DIR__."/bd/transaction.php";
 $historique = recupererTransactions($utilisateur);
+$commenditaire = recupererCommenditaire($utilisateur);
+
+
+$commenditaireAffichage = $commenditaire[0]['nomCommenditaire']
 ?>
 
 <!DOCTYPE html>
@@ -63,21 +67,26 @@ $historique = recupererTransactions($utilisateur);
                 $affichageTransaction =
                 "<table>
                     <tr>
-                        <td>Date</td><td>Distance (km)</td>
+                        <td>Date</td><td>Distance (km)</td><td>Taux</td><td>Revenu</td>
                     </tr>";
                 for ($i=0; $i < sizeof($historique); $i++) { 
                     
                     $date = $historique[$i]['date'];
                     $distance = $historique[$i]['distance'];
+                    $taux = $historique[$i]['taux'];
                     
+                    $revenu = $taux * $distance;
+
                     $affichageTransaction .= "
                     <tr>
-                        <td>$date</td><td>$distance</td>
+                        <td>$date</td><td>$distance</td><td>$taux</td><td>$revenu$</td>
                     </tr>";
                 }
                 $affichageTransaction .= "</table>";
                 echo $affichageTransaction;
             ?>
+
+            <h2>Votre commenditaire est : <?= $commenditaireAffichage?></h2>
             <!--
             <table>
                 <tr>
