@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Une erreur ne vous permet pas d'accéder à cet application</h1>
+    <p>Un problème est survenu avec votre utilisation de l'application.</p>
+    <hr>
+    <p>Vous avez été exclus des opérations normales.</p>
 </body>
 </html>

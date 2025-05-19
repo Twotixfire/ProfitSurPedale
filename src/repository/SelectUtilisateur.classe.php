@@ -30,7 +30,13 @@ class SelectUtilisateur extends Select
         
             $pdoRequete->execute();
     
+            
             $user = $pdoRequete->fetch(PDO::FETCH_OBJ);
+
+            if (empty($user)) {
+                header("Location: ./../error/erreur.php?courrielInexistant");
+            }
+
 
             $this->user->setId($user->idUtilisateur);
             $this->user->setCourriel($user->emailUtilisateur);

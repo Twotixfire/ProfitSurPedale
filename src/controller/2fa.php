@@ -26,6 +26,13 @@ if (!empty($_POST['code'])){
         
         header("Location: ./../../vueUtilisateur.php");
     }
+    else{
+        header("Location: ./../error/erreur.php");
+    }
 }
+else{
+    header("Location: ./../error/erreur.php");
+}
+
 
 

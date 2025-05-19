@@ -13,17 +13,34 @@ if (!empty($_GET['commenditaire']))
 {
     # Récupération du courriel de l'utilisateur
     $courriel = $_SESSION["courriel"];
-    $idCommentaire = $_GET['commenditaire'];
+    $idCommenditaire = $_GET['commenditaire'];
+
+    
+    # Récupération du commenditaire de l'utilisateur connecté
+    $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURLIRE,BDMDP);
+    $requete = $connexion->prepare("SELECT * FROM Utilisateur WHERE emailUtilisateur=:mail");
+    $requete->bindParam(":mail",$courriel, PDO::PARAM_STR);
+    $requete->execute();
+    $informations = $requete->fetchAll();
+
+    $idCommenditaireUtilisateur = $informations[0]['Commenditaire'];
+
+    if ($idCommenditaireUtilisateur == $idCommenditaire)
+    {
+        header("location: ../commenditairesAdhere.php?changementImpossible=$idCommenditaire");
+        return;
+    }
 
     # Changement du commenditaire de l'utilisateur connecté
     $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURECRIRE,BDMDP);
     $requete = $connexion->prepare("UPDATE Utilisateur SET Commenditaire=:id WHERE emailUtilisateur=:mail");
-    $requete->bindParam(":id",$idCommentaire, PDO::PARAM_INT);
+    $requete->bindParam(":id",$idCommenditaire, PDO::PARAM_INT);
     $requete->bindParam(":mail",$courriel, PDO::PARAM_STR);
     $requete->execute();
     $informations = $requete->fetchAll();
     
     # Retour à la page de l'utilisateur
+    error_log("[".date("d/m/o H:i:s e",time())."] Modification du commenditaire de l'utilisateur: " .$_SESSION['courriel']."\n\r" ,3, __DIR__."/../src/controller/logs/profitsurpedale.insertion-bd.log");
     header("location: ../vueUtilisateur.php");
     return;
 }
@@ -71,6 +88,7 @@ if (!empty($_POST['kilometre']))
     $requete->execute();
     
     # Retour à la page de l'utilisateur
+    error_log("[".date("d/m/o H:i:s e",time())."] Ajout d'une transaction par l'utilisateur: " .$_SESSION['courriel']."\n\r" ,3, __DIR__."/../src/controller/logs/profitsurpedale.insertion-bd.log");
     header("location: ../vueUtilisateur.php");
     return;
 

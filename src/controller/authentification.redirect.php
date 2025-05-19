@@ -12,9 +12,11 @@ if (!empty($_POST['courriel']) and !empty($_POST['mdp']))
     $courriel = filter_input(INPUT_POST,"courriel", FILTER_VALIDATE_EMAIL);
     $mdp = filter_input(INPUT_POST,"mdp",FILTER_DEFAULT);
 
-    /**
-     * Requête sur la bd avec le courriel
-     */
+    if ($requeteUtilisateur = new SelectUtilisateur($courriel) == false) {
+        header("Location: ./../error/erreur.php");
+    }
+
+     
     $requeteUtilisateur = new SelectUtilisateur($courriel); //courriel reçu de la requête http
     $user = $requeteUtilisateur->select();
 
@@ -29,16 +31,15 @@ if (!empty($_POST['courriel']) and !empty($_POST['mdp']))
 
         header("Location: ../../Authentification.php");
 
-    }else 
-    {
-        //Mauvais mot de passe, rediriger
-        header("Location: ../index.php?session=erreurInfo");
     }
+    else{
+        header("Location: ./../error/erreur.php?mauvaisMotDePasse");
+}   
 
 }else 
 {
     error_log("[".date("d/m/o H:i:s e",time())."] Authentification anormal - mail ou mdp absent: Client ".$_SERVER['REMOTE_ADDR']."\n\r");
-    header("Location: ../views/erreur.php");
+    header("Location: ./../error/erreur.php");
 }
 
 
