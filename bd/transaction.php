@@ -77,10 +77,11 @@ if (!empty($_POST['kilometre']))
     $offres = $requete->fetchAll();
 
     $tauxCommenditaire = $offres[0]['offreCommenditaire'];
+    error_log($tauxCommenditaire);
 
     # Ajout d'une transaction dans la base de données
     $connexion = new PDO("mysql:dbname=".BDSCHEMA.";host=".BDSERVEUR,BDUTILISATEURECRIRE,BDMDP);
-    $requete = $connexion->prepare("INSERT INTO Transaction (idUtilisateur, date, distance, taux) VALUES (:id,:date, :dst, :taux)");
+    $requete = $connexion->prepare("INSERT INTO Transaction (idUtilisateur, date, distance, revenuUnitaire) VALUES (:id,:date, :dst, :taux)");
     $requete->bindParam(":id",$id, PDO::PARAM_INT);
     $requete->bindParam(":date",$date, PDO::PARAM_STR);
     $requete->bindParam(":dst",$distance, PDO::PARAM_INT);

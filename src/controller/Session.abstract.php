@@ -14,7 +14,7 @@ abstract class Session
         ini_set("session.use_only_cookies" , 1);
         ini_set("session.use_strict_mode", 1);
         ini_set("session.cookie_httponly", 1);
-        ini_set("session.cookie_secure", 1);// 0 pour docker local. 1 en production sur techninfo420.
+        ini_set("session.cookie_secure", 0);// 0 pour docker local. 1 en production sur techninfo420.
         ini_set("session.cookie_samesite" , "Strict");
         ini_set("session.cache_limiter" , "nocache");
         ini_set("session.hash_function" , "sha256");
